@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Base</title>
+    <style>
+        /* Estilos generales */
+        body {
+        margin: 0;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background-color: #f9f9f9;
+        color: #003D26;
+        }
+
+        /* Encabezado */
+        header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: linear-gradient(90deg, #77B42A, #003D26); 
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 2em;
+        font-weight: bold;
+        transition: transform 0.4s ease;
+        z-index: 1000;
+        }
+        /* Ocultar título al hacer scroll */
+        body.scrolled header {
+        transform: translateY(-100%);
+        }
+
+        /* Contenedor principal */
+        main {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        }
+
+        /* Recuadros */
+        .card {
+        background-color: white;
+        border: 2px solid #003D26;
+        border-radius: 8px;
+        width: 80%;
+        max-width: 1000px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+        border-color: #77B42A;
+        }
+
+        .card-img {
+        display: block;
+        width: 100%;
+        max-height: 700px;
+        object-fit: cover;   /* Ajusta la imagen sin deformarla */
+        margin-top: 15px;
+        border-radius: 6px;
+        }
+
+        /* Footer */
+        footer {
+        background-color: #003D26;
+        color: #f9f9f9;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+        }
+
+        footer a {
+        color: #77B42A;
+        text-decoration: none;
+        font-weight: bold;
+        }
+
+        footer a:hover {
+        text-decoration: underline;
+        }
+    </style>
+
+
+</head>
+<body>
+    <header>
+        Bulutsë: "Preservamos legados, protegemos palabras"
+    </header>
+
+    <main>
+        <div class="card">
+        <h3>¿Qué buscamos?</h3>
+        <p>Buscamos preservar y revitalizar las lenguas indígenas costarricenses mediante proyectos que unan tecnología y cultura. Nuestro objetivo es rescatar palabras, historias y saberes, transformándolos en herramientas accesibles para nuevas generaciones. Queremos crear espacios donde la identidad y la memoria colectiva se fortalezcan, asegurando que estos legados no se pierdan y puedan seguir transmitiéndose en el tiempo.</p>
+        <img src="img/ComunidadBribri.jpg" alt="Imagen de una comunidad bribri" class="card-img">
+        </div>
+        <div class="card">
+        <h3>¿Como lo hacemos?</h3>
+        <p>Partimos de la observación de la pérdida de identidad de los pueblos indígenas y la falta de recopilación institucional de sus lenguas. Para responder a esta necesidad, desarrollamos una plataforma robótica con doble función: Como librería digital, actúa como repositorio automatizado que almacena y protege datos estructurados y no estructurados, salvaguardando la memoria histórica. Como sistema tutor inteligente, ofrece ejercicios personalizados que replican la enseñanza de un instructor humano, apoyándose en técnicas de procesamiento de lenguaje natural. De esta manera, Bulutsë integra tecnología educativa avanzada para catalogar, interpretar y enseñar lenguas de tradición oral, asegurando su conservación y transmisión a futuras generaciones.</p>
+        <img src="img/Robot.jpeg" alt="Imagen del robot Bulutse" class="card-img">
+        </div>
+        <div class="card">
+        <h3>¿Por qué es rentable?</h3>
+        <p>Bulutsë es rentable porque combina innovación tecnológica y preservación cultural en un modelo sostenible. Su sistema robótico y tutor inteligente permite ofrecer un servicio por suscripción a universidades, centros culturales y organizaciones que buscan conservar las lenguas autóctonas. El proyecto genera ingresos constantes mediante pagos periódicos, donde un 40% representa utilidad, otro 40% cubre fabricación y personal, y el 20% se destina al mantenimiento. Además, las alianzas estratégicas con instituciones académicas y fabricantes reducen costos de componentes como sensores y microprocesadores, aumentando los márgenes de ganancia. La demanda creciente de soluciones tecnológicas para la educación y la cultura asegura su viabilidad económica a corto y largo plazo, mientras su impacto social fortalece su valor en el mercado.</p>
+        <img src="img/Canvas.png" alt="Imagen del modelo canvas" class="card-img">
+        </div>
+    </main>
+
+    <footer>
+        <p>Contacto: bulutse.cr@gmail.com | Instagram: bulutse_cr</p>
+        <p><a href="#">www.empresa.com</a></p>
+    </footer>
+
+    <script>
+        // Detectar scroll para ocultar el título
+        window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+            document.body.classList.add("scrolled");
+        } else {
+            document.body.classList.remove("scrolled");
+        }
+        });
+    </script>
+</body>
+</html>
