@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bulutsë</title>
     <style>
-        /* Estilos generales */
         body {
         margin: 0;
         font-family: 'Segoe UI', Arial, sans-serif;
         background-color: #f9f9f9;
         color: #003D26;
+        background-image: url("img/background2.png"); 
+        background-size: cover;  
+        background-position: center; 
+        background-attachment: fixed;
         }
-
-        /* Encabezado */
         header {
         position: fixed;
         top: 0;
@@ -27,12 +28,11 @@
         transition: transform 0.4s ease;
         z-index: 1000;
         }
-        /* Ocultar título al hacer scroll */
-        body.scrolled header {
-        transform: translateY(-100%);
+        .mapa {
+        position: relative;
         }
 
-        /* Contenedor principal */
+        body.scrolled header { transform: translateY(-100%); }
         main {
         margin-top: 100px;
         display: flex;
@@ -41,10 +41,8 @@
         gap: 20px;
         padding: 20px;
         }
-
-        /* Recuadros */
         .card {
-        background-color: white;
+        background-color: #003d268a;
         border: 2px solid #003D26;
         border-radius: 8px;
         width: 80%;
@@ -52,24 +50,22 @@
         padding: 20px;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        font-size: 22px;
+        color: #ffffff;
         }
-
         .card:hover {
         transform: translateY(-5px);
         box-shadow: 0 8px 12px rgba(0,0,0,0.2);
         border-color: #77B42A;
         }
-
         .card-img {
         display: block;
         width: 100%;
         max-height: 700px;
-        object-fit: cover;   /* Ajusta la imagen sin deformarla */
+        object-fit: cover;
         margin-top: 15px;
         border-radius: 6px;
         }
-
-        /* Footer */
         footer {
         background-color: #003D26;
         color: #f9f9f9;
@@ -77,21 +73,61 @@
         padding: 20px;
         margin-top: 40px;
         }
-
         footer a {
         color: #77B42A;
         text-decoration: none;
         font-weight: bold;
         }
+        footer a:hover { text-decoration: underline; }
 
-        footer a:hover {
-        text-decoration: underline;
+        button {
+        background-color: #004b41;
+        color: #fff;
+        border: none;
+        padding: 12px 20px;
+        margin: 10px;
+        border-radius: 8px;
+        font-size: 18px;
+        cursor: pointer;
+        }
+        button:hover { background-color: #00695b; }
+        .btn-costa-rica {
+        position: absolute;
+        left: 43%;   
+        top: 55%; 
+        width: 10%;   
+        height: 16%;
+        background: transparent; 
+        border: none;
+        cursor: pointer;
+        transition: transform 0.8s ease;
+        }
+        .btn-costa-rica:hover {
+        transform: scale(1.5);
+        background-image: url("img/CR-transparent.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        }
+        .btn-costa-rica::after {
+        content: "Costa Rica"; 
+        position: absolute;
+        top: -40px; 
+        left: 50%;
+        transform: translateX(-50%);
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: bold;
+        opacity: 0;
+        transition: opacity 0.6s ease;
+        pointer-events: none; 
+        }
+        .btn-costa-rica:hover::after {
+        opacity: 1;
         }
     </style>
-
-
-</head>
-<body>
+    </head>
+    <body>
     <header>
         Bulutsë: "Preservamos legados, protegemos palabras"
     </header>
@@ -112,21 +148,112 @@
         <p>Bulutsë es rentable porque combina innovación tecnológica y preservación cultural en un modelo sostenible. Su sistema robótico y tutor inteligente permite ofrecer un servicio por suscripción a universidades, centros culturales y organizaciones que buscan conservar las lenguas autóctonas. El proyecto genera ingresos constantes mediante pagos periódicos, donde un 40% representa utilidad, otro 40% cubre fabricación y personal, y el 20% se destina al mantenimiento. Además, las alianzas estratégicas con instituciones académicas y fabricantes reducen costos de componentes como sensores y microprocesadores, aumentando los márgenes de ganancia. La demanda creciente de soluciones tecnológicas para la educación y la cultura asegura su viabilidad económica a corto y largo plazo, mientras su impacto social fortalece su valor en el mercado.</p>
         <img src="img/Canvas.png" alt="Imagen del modelo canvas" class="card-img">
         </div>
+        <div class="card mapa" id="card-mapa">
+        <img src="img/Mapa5.png" alt="Mapa global" class="card-img">
+        <button class="btn-costa-rica" onclick="mostrarCostaRica()"></button>
+        </div>
+
     </main>
 
+
     <footer>
-        <p><a href="mailto:bulutse.cr@gmail.com">Contacto: bulutse.cr@gmail.com</a> | <a href="https://www.instagram.com/bulutse_cr?igsh=MWhnaDRuYmZ4b3gzNQ==">Instagram: bulutse_cr</a></p>
+        <p><a href="mailto:bulutse.cr@gmail.com">Contacto: bulutse.cr@gmail.com</a> | 
+        <a href="https://www.instagram.com/bulutse_cr?igsh=MWhnaDRuYmZ4b3gzNQ==">Instagram: bulutse_cr</a></p>
     </footer>
 
     <script>
-        // Detectar scroll para ocultar el título
         window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-            document.body.classList.add("scrolled");
-        } else {
-            document.body.classList.remove("scrolled");
-        }
+        if (window.scrollY > 50) document.body.classList.add("scrolled");
+        else document.body.classList.remove("scrolled");
         });
+
+        const cardMapa = document.getElementById("card-mapa");
+
+        function mostrarCostaRica() {
+        cardMapa.innerHTML = `
+            <h3>País: Costa Rica</h3>
+            <button onclick="mostrarBribri()">Comunidad Bribri</button>
+            <button onclick="volverMapa()">Regresar</button>
+        `;
+        }
+
+        function mostrarBribri() {
+        const cardMapa = document.getElementById("card-mapa");
+        cardMapa.innerHTML = `
+            <div class="card">
+            <h3>Cultura Bribri</h3>
+            <button onclick="mostrarDiccionario()">Diccionario</button>
+            <button onclick="iniciarJuego()">Juego Cultural</button>
+            <button onclick="mostrarCostaRica()">Regresar</button>
+            </div>`;
+        }
+
+        async function mostrarDiccionario() {
+        const resp = await fetch("diccionario.json");
+        const data = await resp.json();
+        cardMapa.innerHTML = `<h2>Diccionario Cultural</h2>`;
+        Object.entries(data).forEach(([palabra, definicion]) => {
+            const card = document.createElement("div");
+            card.className = "card";
+            card.innerHTML = `<h3>${palabra}</h3><p>${definicion}</p>`;
+            cardMapa.appendChild(card);
+        });
+        const btn = document.createElement("button");
+        btn.textContent = "Regresar";
+        btn.onclick = mostrarBribri;
+        cardMapa.appendChild(btn);
+        }
+
+        let preguntas = [], indice = 0, puntaje = 0;
+        async function iniciarJuego() {
+        const resp = await fetch("preguntas.json");
+        preguntas = Object.entries(await resp.json());
+        indice = 0; puntaje = 0;
+        mostrarPregunta();
+        }
+
+        function mostrarPregunta() {
+        const [pregunta, opciones] = preguntas[indice];
+        cardMapa.innerHTML = `<h2>${pregunta}</h2>`;
+        let lista = [opciones.Correcta, opciones.Incorrecta1, opciones.Incorrecta2, opciones.Incorrecta3]
+            .sort(() => Math.random() - 0.5);
+        lista.forEach(opcion => {
+            const btn = document.createElement("button");
+            btn.textContent = opcion;
+            btn.onclick = () => verificar(opcion, opciones.Correcta, opciones.Mensaje);
+            cardMapa.appendChild(btn);
+        });
+        }
+
+        function verificar(opcion, correcta, mensaje) {
+        if (opcion === correcta) {
+            puntaje++;
+            cardMapa.innerHTML += `<p style="color:green">✅ Correcto: ${opcion}</p>`;
+        } else {
+            cardMapa.innerHTML += `<p style="color:red">❌ Incorrecto. La respuesta correcta es: ${correcta}</p>`;
+        }
+        if (mensaje) cardMapa.innerHTML += `<p>💡 ${mensaje}</p>`;
+        indice++;
+        if (indice < preguntas.length) {
+            const next = document.createElement("button");
+            next.textContent = "Siguiente";
+            next.onclick = mostrarPregunta;
+            cardMapa.appendChild(next);
+        } else {
+            cardMapa.innerHTML += `<h3>🎉 Juego terminado. Puntaje: ${puntaje}/${preguntas.length}</h3>`;
+            const btn = document.createElement("button");
+            btn.textContent = "Regresar";
+            btn.onclick = mostrarBribri;
+            cardMapa.appendChild(btn);
+        }
+        }
+
+        function volverMapa() {
+        cardMapa.innerHTML = `
+            <img src="img/Mapa5.png" alt="Mapa global" class="card-img">
+            <button class="btn-costa-rica" onclick="mostrarCostaRica()"></button>
+        `;
+        }
     </script>
-</body>
+    </body>
 </html>
