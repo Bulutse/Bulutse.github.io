@@ -17,7 +17,7 @@ header {
         color: white;
         text-align: center;
         padding: 20px;
-        font-size: 2em;
+        font-size: 2rem;
         font-weight: bold;
         transition: transform 0.4s ease;
         z-index: 1000;
@@ -48,7 +48,7 @@ main {
         padding: 20px;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-        font-size: 22px;
+        font-size: 1.5rem;
         color: #ffffff;
         }
 
@@ -90,7 +90,7 @@ button {
         padding: 12px 20px;
         margin: 10px;
         border-radius: 8px;
-        font-size: 18px;
+        font-size: 1.2rem;
         cursor: pointer;
         }
 
@@ -122,7 +122,7 @@ button:hover { background-color: #00695b; }
         left: 50%;
         transform: translateX(-50%);
         color: #ffffff;
-        font-size: 20px;
+        font-size: 1.2rem;
         font-weight: bold;
         opacity: 0;
         transition: opacity 0.6s ease;
@@ -161,7 +161,7 @@ button:hover { background-color: #00695b; }
         left: 50%;
         transform: translateX(-50%);
         color: #ffffff;
-        font-size: 18px;
+        font-size: 1.2rem;
         font-weight: bold;
         opacity: 0;
         transition: opacity 0.6s ease;
@@ -240,3 +240,16 @@ button:hover { background-color: #00695b; }
 .diccionario-container {
         padding-top: 100px; 
         }
+
+
+@media (max-width: 768px) {
+        .card {
+        width: 95%;
+        font-size: 1rem;
+        }
+        .btn-costa-rica, .btn-bribri {
+        width: 20%; 
+        height: 20%;
+        }
+        }
+
