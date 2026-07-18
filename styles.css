@@ -1,0 +1,242 @@
+body {
+        margin: 0;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background-color: #f9f9f9;
+        color: #003D26;
+        background-image: url("/img/Background2.png"); 
+        background-size: cover;  
+        background-position: center; 
+        background-attachment: fixed;
+        }
+
+header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: linear-gradient(90deg, #77B42A, #003D26); 
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 2em;
+        font-weight: bold;
+        transition: transform 0.4s ease;
+        z-index: 1000;
+        }
+
+.mapa {
+        position: relative;
+        }
+
+body.scrolled header { transform: translateY(-100%); }
+
+main {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        padding-bottom: 250px;
+        }
+
+.card {
+        background-color: #003d268a;
+        border: 2px solid #003D26;
+        border-radius: 8px;
+        width: 80%;
+        max-width: 1000px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        font-size: 22px;
+        color: #ffffff;
+        }
+
+.card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+        border-color: #77B42A;
+        }
+
+.card-img {
+        display: block;
+        width: 100%;
+        max-height: 700px;
+        object-fit: cover;
+        margin-top: 15px;
+        border-radius: 6px;
+        }
+
+footer {
+        background-color: #003D26;
+        color: #f9f9f9;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+        }
+
+footer a {
+        color: #77B42A;
+        text-decoration: none;
+        font-weight: bold;
+        }
+
+footer a:hover { text-decoration: underline; }
+
+button {
+        background-color: #004b41;
+        color: #fff;
+        border: none;
+        padding: 12px 20px;
+        margin: 10px;
+        border-radius: 8px;
+        font-size: 18px;
+        cursor: pointer;
+        }
+
+button:hover { background-color: #00695b; }
+        .btn-costa-rica {
+        position: absolute;
+        left: 43%;   
+        top: 55%; 
+        width: 10%;   
+        height: 16%;
+        background: transparent; 
+        border: none;
+        cursor: pointer;
+        transition: transform 0.8s ease;
+        }
+
+.btn-costa-rica:hover {
+        transform: scale(1.5);
+        background-image: url("img/CR-transparent.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        }
+
+.btn-costa-rica::after {
+        content: "Costa Rica"; 
+        position: absolute;
+        top: -40px; 
+        left: 50%;
+        transform: translateX(-50%);
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: bold;
+        opacity: 0;
+        transition: opacity 0.6s ease;
+        pointer-events: none; 
+        }
+
+.btn-costa-rica:hover::after {
+        opacity: 1;
+        text-shadow: 3px 3px 6px #000000, -3px -3px 6px #000000;
+        }
+        
+.btn-bribri {
+        position: absolute;
+        left: 71%;  
+        top: 64%;  
+        width: 8%;   
+        height: 12%;
+        background: transparent; 
+        border: none;
+        cursor: pointer;
+        transition: transform 0.8s ease;
+        }
+
+.btn-bribri:hover {
+        transform: scale(1.3);
+        background-image: url("img/BribriTransparent.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        }
+
+.btn-bribri::after {
+        content: "Bribri"; 
+        position: absolute;
+        top: -30px; 
+        left: 50%;
+        transform: translateX(-50%);
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+        opacity: 0;
+        transition: opacity 0.6s ease;
+        pointer-events: none; 
+        }
+        
+.btn-bribri:hover::after {
+        opacity: 1;
+        text-shadow: 3px 3px 6px #000000, -3px -3px 6px #000000;
+        }
+
+.card-img-container {
+        position: relative;
+        }
+
+
+.menu-costa-rica {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        }
+
+.menu-costa-rica h3 {
+        color: #ffffff;
+        margin-bottom: 20px;
+        }
+
+.menu-costa-rica button {
+        display: block;
+        margin: 10px auto;
+        }
+
+.btn-regresar {
+        position: absolute;
+        top: 20px;  
+        left: 20px;  
+        width: 120px;
+        height: 60px;
+        background-color: #004b41;
+        color: #fff;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        }
+
+.btn-regresar:hover {
+        background-color: #00695b;
+        }
+
+.diccionario-container {
+        padding: 20px;
+        color: #fff;
+        }
+
+.diccionario-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* dos columnas */
+        gap: 20px;
+        }
+
+.diccionario-item {
+        background-color: rgba(0, 61, 38, 0.7);
+        border: 2px solid #77B42A;
+        border-radius: 8px;
+        padding: 15px;
+        }
+
+.bribri-view {
+        padding-top: 100px; 
+        }
+
+.diccionario-container {
+        padding-top: 100px; 
+        }

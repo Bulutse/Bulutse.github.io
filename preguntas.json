@@ -1,0 +1,36 @@
+{
+    "¿Cómo se dice maíz?":{
+        "Correcta": "kuwö̀",
+        "Incorrecta1": "tsirûwö",
+        "Incorrecta2": "dùlü",
+        "Incorrecta3": "sula",
+        "Mensaje":"El maíz es un alimento fundamental en la cultura Bribri."},
+
+    "¿Cómo se dice cacao?":{
+        "Correcta": "tsirûwö",
+        "Incorrecta1": "kuwö̀",
+        "Incorrecta2": "sibö́",
+        "Incorrecta3": "yë́",
+        "Mensaje":"Dato curioso: Aunque lo parezca, la terminación 'uwo' que aparece en las plantas, no tiene relación con 'planta'."},
+
+    "¿Cómo se dice planta?":{
+        "Correcta": "íyikua",
+        "Incorrecta1": "plaûwo",
+        "Incorrecta2": "ûwo",
+        "Incorrecta3": "dìwöl",
+        "Mensaje":"La espiritualidad y creencias bribri están relacionadas con la naturaleza, en especial con las plantas."},
+
+    "¿Quién es el médico en una comunidad bribri?":{
+        "Correcta": "awá",
+        "Incorrecta1": "sibö́",
+        "Incorrecta2": "ská̱wak",
+        "Incorrecta3": "tsiru",
+        "Mensaje":"Dato curioso: Nutria se traduce como 'awà'. ¡Ten cuidado de no confundirlos!"},
+
+    "Se usa como 'sol', 'dia' e incluso 'hora'":{
+        "Correcta": "dìwöl",
+        "Incorrecta1": "sula",
+        "Incorrecta2": "kö́lö",
+        "Incorrecta3": "dulë́kalöm",
+        "Mensaje":"dìwöl puede significar muchas cosas, pero suele basarse en la función del sol."}
+}

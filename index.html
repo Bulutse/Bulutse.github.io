@@ -1,259 +1,143 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bulutsë</title>
-    <style>
-        body {
-        margin: 0;
-        font-family: 'Segoe UI', Arial, sans-serif;
-        background-color: #f9f9f9;
-        color: #003D26;
-        background-image: url("/img/Background2.png"); 
-        background-size: cover;  
-        background-position: center; 
-        background-attachment: fixed;
-        }
-        header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: linear-gradient(90deg, #77B42A, #003D26); 
-        color: white;
-        text-align: center;
-        padding: 20px;
-        font-size: 2em;
-        font-weight: bold;
-        transition: transform 0.4s ease;
-        z-index: 1000;
-        }
-        .mapa {
-        position: relative;
-        }
-
-        body.scrolled header { transform: translateY(-100%); }
-        main {
-        margin-top: 100px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        padding: 20px;
-        }
-        .card {
-        background-color: #003d268a;
-        border: 2px solid #003D26;
-        border-radius: 8px;
-        width: 80%;
-        max-width: 1000px;
-        padding: 20px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-        font-size: 22px;
-        color: #ffffff;
-        }
-        .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 12px rgba(0,0,0,0.2);
-        border-color: #77B42A;
-        }
-        .card-img {
-        display: block;
-        width: 100%;
-        max-height: 700px;
-        object-fit: cover;
-        margin-top: 15px;
-        border-radius: 6px;
-        }
-        footer {
-        background-color: #003D26;
-        color: #f9f9f9;
-        text-align: center;
-        padding: 20px;
-        margin-top: 40px;
-        }
-        footer a {
-        color: #77B42A;
-        text-decoration: none;
-        font-weight: bold;
-        }
-        footer a:hover { text-decoration: underline; }
-
-        button {
-        background-color: #004b41;
-        color: #fff;
-        border: none;
-        padding: 12px 20px;
-        margin: 10px;
-        border-radius: 8px;
-        font-size: 18px;
-        cursor: pointer;
-        }
-        button:hover { background-color: #00695b; }
-        .btn-costa-rica {
-        position: absolute;
-        left: 43%;   
-        top: 55%; 
-        width: 10%;   
-        height: 16%;
-        background: transparent; 
-        border: none;
-        cursor: pointer;
-        transition: transform 0.8s ease;
-        }
-        .btn-costa-rica:hover {
-        transform: scale(1.5);
-        background-image: url("img/CR-transparent.png");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-color: transparent;
-        }
-        .btn-costa-rica::after {
-        content: "Costa Rica"; 
-        position: absolute;
-        top: -40px; 
-        left: 50%;
-        transform: translateX(-50%);
-        color: #ffffff;
-        font-size: 20px;
-        font-weight: bold;
-        opacity: 0;
-        transition: opacity 0.6s ease;
-        pointer-events: none; 
-        }
-        .btn-costa-rica:hover::after {
-        opacity: 1;
-        }
-    </style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bulutsë</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
+
     <body>
-    <header>
-        Bulutsë: "Preservamos legados, protegemos palabras"
-    </header>
+        <header>
+            Bulutsë: "Preservamos legados, protegemos palabras"
+        </header>
 
-    <main>
-        <div class="card">
-        <h3>¿Qué buscamos?</h3>
-        <p>Buscamos preservar y revitalizar las lenguas indígenas costarricenses mediante proyectos que unan tecnología y cultura. Nuestro objetivo es rescatar palabras, historias y saberes, transformándolos en herramientas accesibles para nuevas generaciones. Queremos crear espacios donde la identidad y la memoria colectiva se fortalezcan, asegurando que estos legados no se pierdan y puedan seguir transmitiéndose en el tiempo.</p>
-        <img src="img/ComunidadBribri.jpg" alt="Imagen de una comunidad bribri" class="card-img">
-        </div>
-        <div class="card">
-        <h3>¿Como lo hacemos?</h3>
-        <p>Partimos de la observación de la pérdida de identidad de los pueblos indígenas y la falta de recopilación institucional de sus lenguas. Para responder a esta necesidad, desarrollamos una plataforma robótica con doble función: Como librería digital, actúa como repositorio automatizado que almacena y protege datos estructurados y no estructurados, salvaguardando la memoria histórica. Como sistema tutor inteligente, ofrece ejercicios personalizados que replican la enseñanza de un instructor humano, apoyándose en técnicas de procesamiento de lenguaje natural. De esta manera, Bulutsë integra tecnología educativa avanzada para catalogar, interpretar y enseñar lenguas de tradición oral, asegurando su conservación y transmisión a futuras generaciones.</p>
-        <img src="img/Robot.jpeg" alt="Imagen del robot Bulutse" class="card-img">
-        </div>
-        <div class="card">
-        <h3>¿Por qué es rentable?</h3>
-        <p>Bulutsë es rentable porque combina innovación tecnológica y preservación cultural en un modelo sostenible. Su sistema robótico y tutor inteligente permite ofrecer un servicio por suscripción a universidades, centros culturales y organizaciones que buscan conservar las lenguas autóctonas. El proyecto genera ingresos constantes mediante pagos periódicos, donde un 40% representa utilidad, otro 40% cubre fabricación y personal, y el 20% se destina al mantenimiento. Además, las alianzas estratégicas con instituciones académicas y fabricantes reducen costos de componentes como sensores y microprocesadores, aumentando los márgenes de ganancia. La demanda creciente de soluciones tecnológicas para la educación y la cultura asegura su viabilidad económica a corto y largo plazo, mientras su impacto social fortalece su valor en el mercado.</p>
-        <img src="img/Canvas.png" alt="Imagen del modelo canvas" class="card-img">
-        </div>
-        <div class="card mapa" id="card-mapa">
-        <img src="img/Mapa5.png" alt="Mapa global" class="card-img">
-        <button class="btn-costa-rica" onclick="mostrarCostaRica()"></button>
-        </div>
-
-    </main>
-
-
-    <footer>
-        <p><a href="mailto:bulutse.cr@gmail.com">Contacto: bulutse.cr@gmail.com</a> | 
-        <a href="https://www.instagram.com/bulutse_cr?igsh=MWhnaDRuYmZ4b3gzNQ==">Instagram: bulutse_cr</a></p>
-    </footer>
-
-    <script>
-        window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) document.body.classList.add("scrolled");
-        else document.body.classList.remove("scrolled");
-        });
-
-        const cardMapa = document.getElementById("card-mapa");
-
-        function mostrarCostaRica() {
-        cardMapa.innerHTML = `
-            <h3>País: Costa Rica</h3>
-            <button onclick="mostrarBribri()">Comunidad Bribri</button>
-            <button onclick="volverMapa()">Regresar</button>
-        `;
-        }
-
-        function mostrarBribri() {
-        const cardMapa = document.getElementById("card-mapa");
-        cardMapa.innerHTML = `
+        <main>
             <div class="card">
-            <h3>Cultura Bribri</h3>
-            <button onclick="mostrarDiccionario()">Diccionario</button>
-            <button onclick="iniciarJuego()">Juego Cultural</button>
-            <button onclick="mostrarCostaRica()">Regresar</button>
-            </div>`;
-        }
-
-        async function mostrarDiccionario() {
-        const resp = await fetch("diccionario.json");
-        const data = await resp.json();
-        cardMapa.innerHTML = `<h2>Diccionario Cultural</h2>`;
-        Object.entries(data).forEach(([palabra, definicion]) => {
-            const card = document.createElement("div");
-            card.className = "card";
-            card.innerHTML = `<h3>${palabra}</h3><p>${definicion}</p>`;
-            cardMapa.appendChild(card);
-        });
-        const btn = document.createElement("button");
-        btn.textContent = "Regresar";
-        btn.onclick = mostrarBribri;
-        cardMapa.appendChild(btn);
-        }
-
-        let preguntas = [], indice = 0, puntaje = 0;
-        async function iniciarJuego() {
-        const resp = await fetch("preguntas.json");
-        preguntas = Object.entries(await resp.json());
-        indice = 0; puntaje = 0;
-        mostrarPregunta();
-        }
-
-        function mostrarPregunta() {
-        const [pregunta, opciones] = preguntas[indice];
-        cardMapa.innerHTML = `<h2>${pregunta}</h2>`;
-        let lista = [opciones.Correcta, opciones.Incorrecta1, opciones.Incorrecta2, opciones.Incorrecta3]
-            .sort(() => Math.random() - 0.5);
-        lista.forEach(opcion => {
-            const btn = document.createElement("button");
-            btn.textContent = opcion;
-            btn.onclick = () => verificar(opcion, opciones.Correcta, opciones.Mensaje);
-            cardMapa.appendChild(btn);
-        });
-        }
-
-        function verificar(opcion, correcta, mensaje) {
-        if (opcion === correcta) {
-            puntaje++;
-            cardMapa.innerHTML += `<p style="color:green">✅ Correcto: ${opcion}</p>`;
-        } else {
-            cardMapa.innerHTML += `<p style="color:red">❌ Incorrecto. La respuesta correcta es: ${correcta}</p>`;
-        }
-        if (mensaje) cardMapa.innerHTML += `<p>💡 ${mensaje}</p>`;
-        indice++;
-        if (indice < preguntas.length) {
-            const next = document.createElement("button");
-            next.textContent = "Siguiente";
-            next.onclick = mostrarPregunta;
-            cardMapa.appendChild(next);
-        } else {
-            cardMapa.innerHTML += `<h3>🎉 Juego terminado. Puntaje: ${puntaje}/${preguntas.length}</h3>`;
-            const btn = document.createElement("button");
-            btn.textContent = "Regresar";
-            btn.onclick = mostrarBribri;
-            cardMapa.appendChild(btn);
-        }
-        }
-
-        function volverMapa() {
-        cardMapa.innerHTML = `
+            <h3>¿Qué buscamos?</h3>
+            <p>Buscamos preservar y revitalizar las lenguas indígenas costarricenses mediante proyectos que unan tecnología y cultura. Nuestro objetivo es rescatar palabras, historias y saberes, transformándolos en herramientas accesibles para nuevas generaciones. Queremos crear espacios donde la identidad y la memoria colectiva se fortalezcan, asegurando que estos legados no se pierdan y puedan seguir transmitiéndose en el tiempo.</p>
+            <img src="img/ComunidadBribri.jpg" alt="Imagen de una comunidad bribri" class="card-img">
+            </div>
+            <div class="card">
+            <h3>¿Como lo hacemos?</h3>
+            <p>Partimos de la observación de la pérdida de identidad de los pueblos indígenas y la falta de recopilación institucional de sus lenguas. Para responder a esta necesidad, desarrollamos una plataforma robótica con doble función: Como librería digital, actúa como repositorio automatizado que almacena y protege datos estructurados y no estructurados, salvaguardando la memoria histórica. Como sistema tutor inteligente, ofrece ejercicios personalizados que replican la enseñanza de un instructor humano, apoyándose en técnicas de procesamiento de lenguaje natural. De esta manera, Bulutsë integra tecnología educativa avanzada para catalogar, interpretar y enseñar lenguas de tradición oral, asegurando su conservación y transmisión a futuras generaciones.</p>
+            <img src="img/Robot.jpeg" alt="Imagen del robot Bulutse" class="card-img">
+            </div>
+            <div class="card">
+            <h3>¿Por qué es rentable?</h3>
+            <p>Bulutsë es rentable porque combina innovación tecnológica y preservación cultural en un modelo sostenible. Su sistema robótico y tutor inteligente permite ofrecer un servicio por suscripción a universidades, centros culturales y organizaciones que buscan conservar las lenguas autóctonas. El proyecto genera ingresos constantes mediante pagos periódicos, donde un 40% representa utilidad, otro 40% cubre fabricación y personal, y el 20% se destina al mantenimiento. Además, las alianzas estratégicas con instituciones académicas y fabricantes reducen costos de componentes como sensores y microprocesadores, aumentando los márgenes de ganancia. La demanda creciente de soluciones tecnológicas para la educación y la cultura asegura su viabilidad económica a corto y largo plazo, mientras su impacto social fortalece su valor en el mercado.</p>
+            <img src="img/Canvas.png" alt="Imagen del modelo canvas" class="card-img">
+            </div>
+            <div class="card mapa" id="card-mapa">
             <img src="img/Mapa5.png" alt="Mapa global" class="card-img">
             <button class="btn-costa-rica" onclick="mostrarCostaRica()"></button>
-        `;
-        }
-    </script>
+            </div>
+        </main>
+
+        <footer>
+            <p><a href="mailto:bulutse.cr@gmail.com">Contacto: bulutse.cr@gmail.com</a> | 
+            <a href="https://www.instagram.com/bulutse_cr?igsh=MWhnaDRuYmZ4b3gzNQ==">Instagram: bulutse_cr</a></p>
+        </footer>
+
+        <script>
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 50) document.body.classList.add("scrolled");
+                else document.body.classList.remove("scrolled");
+            });
+
+            const cardMapa = document.getElementById("card-mapa");
+            let preguntas = [], indice = 0, puntaje = 0;
+            
+            function mostrarCostaRica() {
+                cardMapa.innerHTML = `
+                    <div class="card-img-container">
+                    <img src="img/Mapa2.png" alt="Costa Rica" class="card-img">
+                    <button class="btn-bribri" onclick="mostrarBribri()"></button>
+                    <button class="btn-regresar" onclick="volverMapa()">Regresar</button>
+                    </div>
+                `;
+            }
+
+            function mostrarBribri() {
+                cardMapa.innerHTML = `
+                    <div class="bribri-view">
+                    <button class="btn-regresar" onclick="mostrarCostaRica()">Regresar</button>
+                    <h3>Cultura Bribri</h3>
+                    <button onclick="mostrarDiccionario()">Diccionario</button>
+                    <button onclick="iniciarJuego()">Juego Cultural</button>
+                    </div>
+                `;
+            }
+
+            async function mostrarDiccionario() {
+                const resp = await fetch("diccionario.json");
+                const data = await resp.json();
+                cardMapa.innerHTML = `
+                    <div class="diccionario-container">
+                    <h2>Diccionario Cultural</h2>
+                    <div class="diccionario-grid"></div>
+                    <button class="btn-regresar" onclick="mostrarBribri()">Regresar</button>
+                    </div>
+                `;
+                const grid = cardMapa.querySelector(".diccionario-grid");
+                Object.entries(data).forEach(([palabra, definicion]) => {
+                    const card = document.createElement("div");
+                    card.className = "diccionario-item";
+                    card.innerHTML = `<h3>${palabra}</h3><p>${definicion}</p>`;
+                    grid.appendChild(card);
+                });
+            }
+
+            async function iniciarJuego() {
+                const resp = await fetch("preguntas.json"); // archivo con tus preguntas
+                preguntas = Object.entries(await resp.json());
+                indice = 0;
+                puntaje = 0;
+                mostrarPregunta();
+            }
+
+            function mostrarPregunta() {
+                const [pregunta, opciones] = preguntas[indice];
+                cardMapa.innerHTML = `<h2>${pregunta}</h2>`;
+                let lista = [opciones.Correcta, opciones.Incorrecta1, opciones.Incorrecta2, opciones.Incorrecta3]
+                    .sort(() => Math.random() - 0.5);
+                lista.forEach(opcion => {
+                    const btn = document.createElement("button");
+                    btn.textContent = opcion;
+                    btn.onclick = () => verificar(opcion, opciones.Correcta, opciones.Mensaje);
+                    cardMapa.appendChild(btn);
+                });
+            }
+
+            function verificar(opcion, correcta, mensaje) {
+                if (opcion === correcta) {
+                    puntaje++;
+                    cardMapa.innerHTML += `<p style="color:green">✅ Correcto: ${opcion}</p>`;
+                } else {
+                    cardMapa.innerHTML += `<p style="color:red">❌ Incorrecto. La respuesta correcta es: ${correcta}</p>`;
+                }
+                if (mensaje) cardMapa.innerHTML += `<p>💡 ${mensaje}</p>`;
+                indice++;
+                if (indice < preguntas.length) {
+                    const next = document.createElement("button");
+                    next.textContent = "Siguiente";
+                    next.onclick = mostrarPregunta;
+                    cardMapa.appendChild(next);
+                } else {
+                    cardMapa.innerHTML += `<h3>🎉 Juego terminado. Puntaje: ${puntaje}/${preguntas.length}</h3>`;
+                    const btn = document.createElement("button");
+                    btn.textContent = "Regresar";
+                    btn.onclick = mostrarBribri;
+                    cardMapa.appendChild(btn);
+                }
+            }
+
+            function volverMapa() {
+                cardMapa.innerHTML = `
+                    <img src="img/Mapa5.png" alt="Mapa global" class="card-img">
+                    <button class="btn-costa-rica" onclick="mostrarCostaRica()"></button>
+                `;
+            }
+        </script>
     </body>
 </html>
