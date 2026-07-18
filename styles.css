@@ -247,14 +247,4 @@ button:hover { background-color: #00695b; }
         }
 
 
-@media (max-width: 768px) {
-        .card {
-        width: 95%;
-        font-size: 1rem;
-        }
-        .btn-costa-rica, .btn-bribri {
-        width: 20%; 
-        height: 20%;
-        }
-        }
 
