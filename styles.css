@@ -95,7 +95,8 @@ button {
         }
 
 button:hover { background-color: #00695b; }
-        .btn-costa-rica {
+
+.btn-costa-rica {
         position: absolute;
         left: 43%;   
         top: 55%; 
@@ -257,13 +258,38 @@ button:hover { background-color: #00695b; }
                 font-size: 14px;
         }
         button {
-        font-size: 16px; 
-        padding: 10px; 
-        min-width: fit-content;
-        min-height: fit-content;
-        max-width: 30px;
-        max-height: 20px;
+                font-size: 16px; 
+                padding: 10px; 
+                min-width: fit-content;
+                min-height: fit-content;
+                max-width: 25px;
+                max-height: 15px;
         }
+        .btn-costa-rica:hover {
+                background-image: none;
         }
+        .btn-costa-rica::after{
+                font-size: 1rem;
+        }     
+        .btn-bribri{
+                top: 60%;
+        }
+        .btn-bribri:hover {
+                background-image: none;
+        }
+
+        .btn-bribri::after {
+                font-size: 1rem;
+        }           
+        
+        footer{
+                padding: 5%;
+                margin-top: -10%;
+        }
+
+        .bribri-view {
+                padding-top: 40px; 
+        }
+}
 
 
