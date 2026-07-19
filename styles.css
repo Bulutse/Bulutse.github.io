@@ -10,6 +10,7 @@ body {
         }
 
 header {
+        margin-left: -15px;
         position: fixed;
         top: 0;
         width: 100%;
@@ -289,6 +290,10 @@ button:hover { background-color: #00695b; }
 
         .bribri-view {
                 padding-top: 40px; 
+        }
+
+        .diccionario-grid {
+                grid-template-columns: 1fr;
         }
 }
 
