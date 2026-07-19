@@ -246,5 +246,24 @@ button:hover { background-color: #00695b; }
         padding-top: 100px; 
         }
 
+@media only screen and (max-width: 600px) {
+        body {
+                font-size: 14px;
+        }
+        header {
+                font-size: 20px;
+        }
+        .card {
+                font-size: 14px;
+        }
+        button {
+        font-size: 16px; 
+        padding: 10px; 
+        min-width: fit-content;
+        min-height: fit-content;
+        max-width: 30px;
+        max-height: 20px;
+        }
+        }
 
 
