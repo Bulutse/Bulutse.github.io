@@ -3,6 +3,25 @@ window.addEventListener("scroll", () => {
     else document.body.classList.remove("scrolled");
 });
 
+
+const backsound = new Audio("Backsound.mp3");
+backsound.loop = true;
+backsound.volume = 0.5; 
+
+const gamesound = new Audio("Gamesound.mp3");
+gamesound.loop = true;
+gamesound.volume = 0.5; 
+
+document.addEventListener("click", () => {
+    if (backsound.paused) {
+        backsound.play();
+    }
+}, { once: true });
+
+
+
+
+
 const cardMapa = document.getElementById("card-mapa");
 let preguntas = [], indice = 0, puntaje = 0;
             
@@ -48,6 +67,9 @@ async function mostrarDiccionario() {
 }
 
 async function iniciarJuego() {
+    backsound.pause();
+    gamesound.currentTime = 0;
+    gamesound.play();
     const resp = await fetch("preguntas.json"); 
     preguntas = Object.entries(await resp.json());
     indice = 0;
@@ -71,11 +93,18 @@ function mostrarPregunta() {
 function verificar(opcion, correcta, mensaje) {
     if (opcion === correcta) {
         puntaje++;
-        cardMapa.innerHTML += `<p style="color:green">✅ Correcto: ${opcion}</p>`;
+        cardMapa.innerHTML += `<p style="color:#84C786">✅ Correcto: ${opcion}</p>`;
     } else {
         cardMapa.innerHTML += `<p style="color:red">❌ Incorrecto. La respuesta correcta es: ${correcta}</p>`;
     }
-    if (mensaje) cardMapa.innerHTML += `<p>💡 ${mensaje}</p>`;
+    if (mensaje) {
+        cardMapa.innerHTML += `
+            <div class="info-container">
+                <img src="img/Loro_Talking.png" alt="Loro Bribri" class="info-img">
+                <div class="speech-bubble">${mensaje}</div>
+            </div>`;
+    }
+
     indice++;
     if (indice < preguntas.length) {
         const next = document.createElement("button");
@@ -86,7 +115,12 @@ function verificar(opcion, correcta, mensaje) {
         cardMapa.innerHTML += `<h3>🎉 Juego terminado. Puntaje: ${puntaje}/${preguntas.length}</h3>`;
         const btn = document.createElement("button");
         btn.textContent = "Regresar";
-        btn.onclick = mostrarBribri;
+        btn.onclick = () => { 
+            mostrarBribri();
+            gamesound.pause();
+            backsound.currentTime = 0;
+            backsound.play();
+        };
         cardMapa.appendChild(btn);
     }
 }

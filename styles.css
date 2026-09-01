@@ -248,6 +248,50 @@ button:hover { background-color: #00695b; }
         padding-top: 100px; 
         }
 
+.info-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 15px;
+        margin-top: 10px;
+        flex-direction: row;
+}
+
+.info-text {
+        flex: 1;
+        color: #fff;
+        font-size: 1.3rem;
+}
+
+.info-img {
+        width: 120px;
+        height: auto;
+        border-radius: 8px;
+}
+
+.speech-bubble {
+        position: relative;
+        background-color: rgba(255, 255, 255, 0.15);
+        border: 2px solid #77B42A;
+        border-radius: 15px;
+        padding: 15px 20px;
+        color: #fff;
+        font-size: 1.2rem;
+        max-width: 70%;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.speech-bubble::before {
+        content: "";
+        position: absolute;
+        left: -15px;
+        top: 20px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent rgba(255,255,255,0.15) transparent transparent;
+}
+
+
 @media only screen and (max-width: 720px) {
         body {
                 font-size: 14px;;
