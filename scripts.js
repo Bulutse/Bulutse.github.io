@@ -79,7 +79,7 @@ async function iniciarJuego() {
 
 function mostrarPregunta() {
     const [pregunta, opciones] = preguntas[indice];
-    cardMapa.innerHTML = `<h2>${pregunta}</h2>`;
+    cardMapa.innerHTML = `<h2>${pregunta}</h2><div class="opciones-grid"></div>`;
     const grid = cardMapa.querySelector(".opciones-grid");
     let lista = [opciones.Correcta, opciones.Incorrecta1, opciones.Incorrecta2, opciones.Incorrecta3]
         .sort(() => Math.random() - 0.5);
