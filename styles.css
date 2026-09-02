@@ -339,6 +339,30 @@ button:hover { background-color: #00695b; }
         .diccionario-grid {
                 grid-template-columns: 1fr;
         }
+
+        .opciones-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                justify-items: center;
+        }
+
+        .info-container{
+                flex-direction: column;
+                align-items: center;
+        }
+
+        .speech-bubble{
+                max-width: 90%;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                box-sizing: border-box;
+        }
+
+        .info-img{
+                max-width: 100px;
+                height: auto;
+        }
 }
 
 
