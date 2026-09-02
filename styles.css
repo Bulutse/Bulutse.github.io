@@ -291,6 +291,13 @@ button:hover { background-color: #00695b; }
         border-color: transparent rgba(255,255,255,0.15) transparent transparent;
 }
 
+.opciones-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+}
+
 
 @media only screen and (max-width: 720px) {
         body {
