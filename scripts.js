@@ -6,11 +6,11 @@ window.addEventListener("scroll", () => {
 
 const backsound = new Audio("Backsound.mp3");
 backsound.loop = true;
-backsound.volume = 0.5; 
+backsound.volume = 1; 
 
 const gamesound = new Audio("Gamesound.mp3");
 gamesound.loop = true;
-gamesound.volume = 0.5; 
+gamesound.volume = 1; 
 
 document.addEventListener("click", () => {
     if (backsound.paused) {
@@ -74,46 +74,89 @@ async function iniciarJuego() {
     preguntas = Object.entries(await resp.json());
     indice = 0;
     puntaje = 0;
+
+    cardMapa.innerHTML = `
+        <div id="pregunta-container"></div>
+        <div class="loro-mensaje-container">
+            <img id="loro" src="img/Loro_Silent.png" alt="Loro Bribri" class="info-img">
+            <div id="speech-container" class="speech-bubble" style="display:none;"></div>
+        </div>
+        <div id="controls-container" class="controls"></div>
+    `;
+
+
     mostrarPregunta();
 }
 
+
 function mostrarPregunta() {
     const [pregunta, opciones] = preguntas[indice];
-    cardMapa.innerHTML = `<h2>${pregunta}</h2><div class="opciones-grid"></div>`;
-    const grid = cardMapa.querySelector(".opciones-grid");
+    const preguntaContainer = document.getElementById("pregunta-container");
+    preguntaContainer.innerHTML = `<h2>${pregunta}</h2><div class="opciones-grid"></div>`;
+    const grid = preguntaContainer.querySelector(".opciones-grid");
+
     let lista = [opciones.Correcta, opciones.Incorrecta1, opciones.Incorrecta2, opciones.Incorrecta3]
         .sort(() => Math.random() - 0.5);
+
     lista.forEach(opcion => {
         const btn = document.createElement("button");
         btn.textContent = opcion;
         btn.onclick = () => verificar(opcion, opciones.Correcta, opciones.Mensaje);
-        cardMapa.appendChild(btn);
+        grid.appendChild(btn);
     });
+
+    const speech = document.getElementById("speech-container");
+    if (speech) speech.style.display = "none";
+
+    const loro = document.getElementById("loro");
+    if (loro) loro.src = "img/Loro_Silent.png";
 }
 
 function verificar(opcion, correcta, mensaje) {
+    const preguntaContainer = document.getElementById("pregunta-container");
+
     if (opcion === correcta) {
         puntaje++;
-        cardMapa.innerHTML += `<p style="color:#84C786">✅ Correcto: ${opcion}</p>`;
+        preguntaContainer.innerHTML += `<p style="color:#84C786">✅ Correcto: ${opcion}</p>`;
     } else {
-        cardMapa.innerHTML += `<p style="color:red">❌ Incorrecto. La respuesta correcta es: ${correcta}</p>`;
-    }
-    if (mensaje) {
-        cardMapa.innerHTML += `
-            <div class="info-container">
-                <img src="img/Loro_Talking.png" alt="Loro Bribri" class="info-img">
-                <div class="speech-bubble">${mensaje}</div>
-            </div>`;
+        preguntaContainer.innerHTML += `<p style="color:red">❌ Incorrecto. La respuesta correcta es: ${correcta}</p>`;
     }
 
+    if (mensaje) {
+        const loro = document.getElementById("loro");
+        const speech = document.getElementById("speech-container");
+        if (loro) loro.src = "img/Loro_Talking.png";
+        if (speech) {
+            speech.textContent = mensaje;
+            speech.style.display = "block"; 
+        }
+    } else {
+        const loro = document.getElementById("loro");
+        const speech = document.getElementById("speech-container");
+        if (loro) loro.src = "img/Loro_Silent.png";
+        if (speech) {
+            speech.textContent = "";
+            speech.style.display = "none"; 
+        }
+    }
+
+
+
+
     indice++;
+    const controls = document.getElementById("controls-container");
+    controls.innerHTML = ""; // limpiar antes de añadir
+
     if (indice < preguntas.length) {
         const next = document.createElement("button");
         next.textContent = "Siguiente";
         next.onclick = mostrarPregunta;
-        cardMapa.appendChild(next);
+        controls.appendChild(next);
     } else {
-        cardMapa.innerHTML += `<h3>🎉 Juego terminado. Puntaje: ${puntaje}/${preguntas.length}</h3>`;
+        const endMsg = document.createElement("h3");
+        endMsg.textContent = `🎉 Juego terminado. Puntaje: ${puntaje}/${preguntas.length}`;
+        controls.appendChild(endMsg);
+
         const btn = document.createElement("button");
         btn.textContent = "Regresar";
         btn.onclick = () => { 
@@ -122,9 +165,10 @@ function verificar(opcion, correcta, mensaje) {
             backsound.currentTime = 0;
             backsound.play();
         };
-        cardMapa.appendChild(btn);
+        controls.appendChild(btn);
     }
 }
+
 
 function volverMapa() {
     cardMapa.innerHTML = `

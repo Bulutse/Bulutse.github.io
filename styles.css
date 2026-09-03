@@ -252,7 +252,7 @@ button:hover { background-color: #0091bd; }
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        gap: 15px;
+        gap: 10px;
         margin-top: 10px;
         flex-direction: row;
 }
@@ -264,9 +264,8 @@ button:hover { background-color: #0091bd; }
 }
 
 .info-img {
-        width: 120px;
+        width: 100px;
         height: auto;
-        border-radius: 8px;
 }
 
 .speech-bubble {
@@ -276,7 +275,7 @@ button:hover { background-color: #0091bd; }
         border-radius: 15px;
         padding: 15px 20px;
         color: #fff;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         max-width: 70%;
         box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
@@ -298,6 +297,40 @@ button:hover { background-color: #0091bd; }
         justify-content: center;
 }
 
+.loro-container {
+        display: flex;
+        justify-content: center;  
+        align-items: center;      
+}
+
+.loro-container img {
+        width: 120px;
+        height: auto;
+}
+
+.loro-mensaje-container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 15px;
+        margin-top: 20px;
+}
+
+.loro-mensaje-container .info-img {
+        width: 100px;
+        height: auto;
+}
+
+#speech-container {
+        background-color: rgba(255, 255, 255, 0.15);
+        border: 2px solid #00ECEF;
+        border-radius: 15px;
+        padding: 15px 20px;
+        color: #fff;
+        font-size: 1.1rem;
+        max-width: 70%;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
 
 @media only screen and (max-width: 720px) {
         body {
