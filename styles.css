@@ -229,12 +229,12 @@ button:hover { background-color: #0091bd; }
 
 .diccionario-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* dos columnas */
+        grid-template-columns: 1fr 1fr; 
         gap: 20px;
         }
 
 .diccionario-item {
-        background-color: rgba(0, 61, 38, 0.7);
+        background-color: rgba(0, 61, 92, 0.6);
         border: 2px solid #00ECEF;
         border-radius: 8px;
         padding: 15px;
@@ -332,6 +332,19 @@ button:hover { background-color: #0091bd; }
         box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 
+.bribri-text-box {
+        background-color: rgba(0, 61, 92, 0.6); 
+        border: 2px solid #00ECEF;
+        border-radius: 10px;
+        padding: 15px;
+        margin: 15px 0;
+        color: #fff;
+        font-size: 1.2rem;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+
 @media only screen and (max-width: 720px) {
         body {
                 font-size: 14px;;
@@ -403,6 +416,10 @@ button:hover { background-color: #0091bd; }
         .info-img{
                 max-width: 100px;
                 height: auto;
+        }
+
+        .bribri-text-box {
+        font-size: 1rem;
         }
 }
 

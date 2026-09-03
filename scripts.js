@@ -39,10 +39,18 @@ function mostrarCostaRica() {
 function mostrarBribri() {
     cardMapa.innerHTML = `
         <div class="bribri-view">
-        <button class="btn-regresar" onclick="mostrarCostaRica()">Regresar</button>
-        <h3>Cultura Bribri</h3>
-        <button onclick="mostrarDiccionario()">Diccionario</button>
-        <button onclick="iniciarJuego()">Juego Cultural</button>
+            <button class="btn-regresar" onclick="mostrarCostaRica()">Regresar</button>
+            <h3>Cultura Bribri</h3>
+            <div class="bribri-text-box">
+                <p>
+                    La comunidad Bribri es un pueblo indígena de Talamanca,
+                    con rica tradición lingüística y espiritual. Su cultura
+                    se basa en el respeto a la naturaleza, la familia y la
+                    sabiduría ancestral.
+                </p>
+            </div>
+            <button onclick="mostrarDiccionario()">Diccionario</button>
+            <button onclick="iniciarJuego()">Juego Cultural</button>
         </div>
     `;
 }
