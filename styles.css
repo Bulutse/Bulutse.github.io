@@ -465,7 +465,7 @@ button:hover { background-color: #0091bd; }
 
         .carta {
         font-size: 0.5rem; 
-        height: 60px;      
+        height: 120px;      
         width: 100%;
         max-width: 70px; 
         padding: 0;
@@ -476,8 +476,8 @@ button:hover { background-color: #0091bd; }
         }
 
         .carta img {
-        width: 100%;
-        height: 100%;
+        width: 200%;
+        height: 200%;
         object-fit: contain; 
         border-radius: 6px;
         }
