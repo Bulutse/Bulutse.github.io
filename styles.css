@@ -467,7 +467,7 @@ button:hover { background-color: #0091bd; }
         font-size: 1rem; 
         height: 200%;      
         width: 100%;
-        max-height: 200px;
+        max-height: 100px;
         max-width: 70px; 
         padding: 0;
         display: flex;
