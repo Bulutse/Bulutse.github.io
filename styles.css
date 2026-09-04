@@ -464,10 +464,9 @@ button:hover { background-color: #0091bd; }
         }
 
         .carta {
-        font-size: 0.5rem; 
-        height: 100%;      
+        font-size: 0.8rem; 
+        height: 200%;      
         width: 100%;
-        min-height: 100px;
         max-height: 200px;
         max-width: 70px; 
         padding: 0;
