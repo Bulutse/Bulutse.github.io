@@ -246,9 +246,22 @@ function voltearCarta(btn) {
                 c2.textContent = "❓";
             }
             seleccionadas = [];
+
+            const restantes = document.querySelectorAll(".carta:not(.encontrada)");
+            if (restantes.length === 0) {
+                setTimeout(() => {
+                    cardMapa.innerHTML = `
+                        <div class="memoria-end">
+                            <h2>🎉 Juego de Memoria Terminado 🎉</h2>
+                            <button onclick="salirJuegoMemoria()">Regresar</button>
+                        </div>
+                    `;
+                }, 1000); 
+            }
         }, 1000);
     }
 }
+
 
 
 
