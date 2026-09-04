@@ -50,7 +50,8 @@ function mostrarBribri() {
                 </p>
             </div>
             <button onclick="mostrarDiccionario()">Diccionario</button>
-            <button onclick="iniciarJuego()">Juego Cultural</button>
+            <button onclick="iniciarJuego1()">Juego de Preguntas</button>
+            <button onclick="iniciarJuego2()">Juego de Memoria</button>
         </div>
     `;
 }
@@ -74,14 +75,17 @@ async function mostrarDiccionario() {
     });
 }
 
-async function iniciarJuego() {
+async function iniciarJuego1() {
     backsound.pause();
     gamesound.currentTime = 0;
     gamesound.play();
     const resp = await fetch("preguntas.json"); 
-    preguntas = Object.entries(await resp.json());
+    let todas = Object.entries(await resp.json());
+    todas = todas.sort(() => Math.random() - 0.5);
+    preguntas = todas.slice(0, 3);
     indice = 0;
     puntaje = 0;
+
 
     cardMapa.innerHTML = `
         <div id="pregunta-container"></div>
@@ -147,13 +151,9 @@ function verificar(opcion, correcta, mensaje) {
             speech.style.display = "none"; 
         }
     }
-
-
-
-
     indice++;
     const controls = document.getElementById("controls-container");
-    controls.innerHTML = ""; // limpiar antes de añadir
+    controls.innerHTML = "";
 
     if (indice < preguntas.length) {
         const next = document.createElement("button");
@@ -176,6 +176,81 @@ function verificar(opcion, correcta, mensaje) {
         controls.appendChild(btn);
     }
 }
+
+function salirJuegoMemoria() {
+    mostrarBribri();
+    gamesound.pause();
+    backsound.currentTime = 0;
+    backsound.play();
+}
+
+
+async function iniciarJuego2() {
+    backsound.pause();
+    gamesound.currentTime = 0;
+    gamesound.play();
+
+    const resp = await fetch("memoria.json"); 
+    const data = await resp.json();
+
+    let cartas = [];
+    Object.entries(data).forEach(([palabra, info]) => {
+        cartas.push({ tipo: "imagen", palabra, contenido: `<img src="img/${info.Imagen}" alt="${palabra}">` });
+        cartas.push({ tipo: "definicion", palabra, contenido: `<p>${info.Definicion}</p>` });
+    });
+
+    cartas = cartas.sort(() => Math.random() - 0.5).slice(0, 16);
+
+    cardMapa.innerHTML = `
+        <div id="memoria-container" class="memoria-grid"></div>
+        <div class="controls">
+            <button onclick="salirJuegoMemoria()">Regresar</button>
+        </div>
+    `;
+
+
+    const grid = document.getElementById("memoria-container");
+    cartas.forEach((carta, index) => {
+        const btn = document.createElement("button");
+        btn.className = "carta";
+        btn.dataset.palabra = carta.palabra;
+        btn.dataset.tipo = carta.tipo;
+        btn.dataset.contenido = carta.contenido;
+        btn.dataset.index = index;
+        btn.textContent = "❓"; 
+        btn.onclick = () => voltearCarta(btn);
+        grid.appendChild(btn);
+    });
+
+    seleccionadas = [];
+}
+
+let seleccionadas = [];
+
+function voltearCarta(btn) {
+    if (seleccionadas.length >= 2 || btn.classList.contains("encontrada")) return;
+
+    btn.innerHTML = btn.dataset.contenido;
+    seleccionadas.push(btn);
+
+    if (seleccionadas.length === 2) {
+        setTimeout(() => {
+            const [c1, c2] = seleccionadas;
+            if (c1.dataset.palabra === c2.dataset.palabra && c1.dataset.tipo !== c2.dataset.tipo) {
+                c1.classList.add("encontrada");
+                c2.classList.add("encontrada");
+                c1.disabled = true;
+                c2.disabled = true;
+            } else {
+                c1.textContent = "❓";
+                c2.textContent = "❓";
+            }
+            seleccionadas = [];
+        }, 1000);
+    }
+}
+
+
 
 
 function volverMapa() {

@@ -1,0 +1,34 @@
+{
+    "Jaguar": {
+        "Definicion": "Dulë́kalöm / Jaguar",
+        "Imagen": "MEMjaguar.png"
+    },
+    "Tierra": {
+        "Definicion": "íyök / Tierra",
+        "Imagen": "MEMtierra.png"
+    },
+    "Árbol": {
+        "Definicion": "Kàl / Árbol",
+        "Imagen": "MEMarbol.png"
+    },
+    "Cacao": {
+        "Definicion": "Tsirûwö / Cacao",
+        "Imagen": "MEMcacao.png"
+    },
+    "Maíz": {
+        "Definicion": "Kuwö̀ / Planta de maíz",
+        "Imagen": "MEMmaiz.png"
+    },
+    "Sol": {
+        "Definicion": "Dìwö / Sol",
+        "Imagen": "MEMsol.png"
+    },
+    "Madre": {
+        "Definicion": "Mì̱ / Madre",
+        "Imagen": "MEMmadre.png"
+    },
+    "Padre": {
+        "Definicion": "Yë́ / Padre",
+        "Imagen": "MEMpadre.png"
+    }
+}
